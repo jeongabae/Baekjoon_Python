@@ -6,4 +6,4 @@ for _ in range(T):
     for j in range(floor):
         for k in range(1,unit):
             apart[k] += apart[k - 1]
-    print(apart[-1])
+    print(apart[-1]) 
