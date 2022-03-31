@@ -1,7 +1,7 @@
 import sys
 from collections import deque #큐는 선입선출. 양방향 큐는 데큐.(앞, 뒤 양쪽방향에서 엘리먼트 추가 제거 가능)
 def input():
-    return sys.stdin.readline().rstrip() //rstrip()을 쓰는게 더 시간 단축!
+    return sys.stdin.readline().rstrip() #rstrip()을 쓰는게 더 시간 단축!
 
 queue = deque()
 N = int(input())
