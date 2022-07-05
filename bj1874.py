@@ -7,17 +7,20 @@ def input():
 
 n = int(input())
 num = [int(input()) for _ in range(n)]
-m, s, op = 1, [], []
+m, s, op = 1, [], []  # m이 1인 이유는 스택에 1부터 쌓을 것이기 때문에(문제에 수열을 이루는 1이상 n이하의 정수가 하나씩 순서대로 주어진다함)
+# s는 사용할 스택
+# op에는 +(push)를 했는지 -(pop)을 했는 지 저장
 
 for i in num:
     while not s or s[-1] < int(i):
         op.append('+')
         s.append(m)
         m += 1
-    if s[-1] > int(i):
+    if s[-1] > int(i):  # 스택에 마지막으로 넣은 원소(s[-1])가 i(수열을 이뤄야하는 수)보다 크게 되면
+        # 스택 특정 상 더 작은 수를 먼저 꺼낼 수 없으므로 수열을 못 만드는 것.
         print('NO')
         exit()  # break를 쓰게 되면 아예 다음 입력을 받지 못하고 while반복문을 빠져나가기 때문에 exit()혹은 exit(0)으로 써줘야 한다
-    else:
+    else:  # 스택에 마지막으로 넣은 원소(s[-1])가 i(수열을 이뤄야하는 수)보다 크지 않으면 이번에 pop할 숫자 = i 일 것이므로 pop해줌.
         op.append('-')
         s.pop()
 
