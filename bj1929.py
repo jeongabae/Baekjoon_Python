@@ -1,4 +1,20 @@
 #좋은 방법 : 에라토스테네스의 체
+#아래는 에라토스테네스의 체 이용한 풀이이다!
+m,n = map(int,input().split())
+sieve = [False, False] + [True] * (n-1) #0과 1은 소수가 아님 #2부터는 일단 True라고 해놓고 for문에서 나머지 해결!
+primes=[]
+
+sqrt_n = int(n**0.5) #n의 최대 약수가 sqrt(n) 이하이므로 여기까지만 검사!
+for i in range(2,sqrt_n+1):
+    if sieve[i]:
+        for j in range(2*i,n+1,i): #지워지지 않은 수 중 제일 작은 2를 소수로 채택하고, 나머지 2의 배수를 모두 지운다.(false로...)
+            sieve[j] = False
+for i in range(2,n+1):#이게 i가 2부터 시작하니까 만약에 3~16사이의 소수를 찾아라면, 2가 안들어가야 하므로..이런..것!
+    if sieve[i] and i >= m:
+        primes.append(i)
+for i in primes:
+    print(i)
+""" 에라토스테네스 체 이용 기본 풀이
 m,n = map(int,input().split())
 sieve = [False, False] + [True] * (n-1) #0과 1은 소수가 아님 #2부터는 일단 True라고 해놓고 for문에서 나머지 해결!
 primes=[]
@@ -10,6 +26,7 @@ for i in range(2,n+1):
             primes.append(i)
 for i in primes:
     print(i)
+"""
 
 """시간초과
 M, N = map(int,input().split())
