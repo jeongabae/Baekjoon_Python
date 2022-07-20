@@ -1,4 +1,4 @@
-"""내풀이1
+"""내풀이 1
 h = [int(input()) for i in range(9)]
 spy1 = spy2 = 0
 for i in range(8):
