@@ -1,4 +1,4 @@
-d = [[0 for _ in range(10)] for _ in range(10)]
+d = [[0 for _ in range(10)] for _ in range(10)] #d = [[0]*10 for _ in range(10)]
 for i in range(10):
     d[i] = list(map(int,input().split()))
 x=y=1
