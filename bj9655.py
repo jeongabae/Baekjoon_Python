@@ -11,7 +11,7 @@ print("SK" if N%2 else "CY")
 ...
 """
 
-"""동적계획법(DP)(Dynamic Programming)을 이용한 풀이
+""" 동적계획법(DP)(Dynamic Programming)을 이용한 풀이
 import sys
 def input():
     return sys.stdin.readline().rstrip()
