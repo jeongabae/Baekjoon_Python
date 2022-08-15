@@ -1,3 +1,4 @@
+# 백준 10093번 : 숫자 : 구현
 a, b = map(int, input().split())
 a2 = min(a, b)
 b2 = max(a, b)
